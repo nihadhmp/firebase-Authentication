@@ -9,6 +9,7 @@ function Profile() {
 
   const [email, setEmail] = useState();
   const [name, setName] = useState();
+  const [photo, setPhoto] = useState();
   const navigate = useNavigate();
 
   const fetchUser = async () => {
@@ -29,6 +30,7 @@ function Profile() {
       if (user) {
         setEmail(user?.email);
         setName(user?.displayName);
+        setPhoto(user.photoURL);
         fetchUser();
       }
     });
@@ -42,7 +44,7 @@ function Profile() {
     <section className="w-screen h-screen bg-slate-200 flex  flex-col gap-7 justify-center items-center">
       <p className="text-6xl font-semibold text-teal-900">PROFILE</p>
       <div className="w-1/3 py-7 px-7 flex  justify-start items-center gap-3 bg-white rounded-lg">
-        <img src={download} alt="profile" className="w-40 rounded-full" />
+        <img src={photo} alt="profile" className="w-40 rounded-full" />
 
         <div className="flex flex-col gap-4 ml-5">
           <p className="text-teal-900 text-xl font-bold">{name}</p>

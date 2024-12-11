@@ -1,4 +1,3 @@
-import download from "../assets/download.png";
 import { useEffect, useState } from "react";
 import { auth, db } from "../Configuration";
 import { doc, getDoc } from "firebase/firestore";
